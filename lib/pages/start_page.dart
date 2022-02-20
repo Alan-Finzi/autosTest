@@ -1,57 +1,66 @@
-import 'package:auto_test_app/widget/widget_curve.dart';
+import 'package:auto_test_app/pages/history_services_page.dart';
+import 'package:auto_test_app/pages/load_page.dart';
+import 'package:auto_test_app/pages/search_page.dart';
 import 'package:flutter/material.dart';
+import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
+import 'home_page.dart';
 
 
-class StartPage extends StatelessWidget {
+class StartPage extends StatefulWidget {
     static const String routeName = 'start_page';
 
+  const StartPage({Key? key}) : super(key: key);
+
+  @override
+  State<StartPage> createState() => _StartPageState();
+}
+
+class _StartPageState extends State<StartPage> {
+    var _currentIndex = 0;
     @override
     Widget build(BuildContext context) {
         return Scaffold(
             resizeToAvoidBottomInset: false,
-            body: _bodyChild(context)
-        );
-    }
-
-    Widget _bodyChild(BuildContext context){
-        return Stack(
-            children: <Widget>[
-                _background(),
-                _buttonNext(context)
-            ],
-        );
-    }
-
-
-    Widget _background(){
-        return Container(
-            width: double.infinity,
-            height: double.infinity,
-            color: 	Colors.white,
-            child: const Image(
-                image: AssetImage('assets/images/start_page.png'),
-                fit: BoxFit.cover,
-            ),
-        );
-    }
-
-    Widget _buttonNext(BuildContext context){
-        return SizedBox(
-            width: double.infinity,
-            height: double.infinity,
-            child: Container(
-                padding: const EdgeInsets.only(bottom: 60.0),
-                alignment: Alignment.bottomCenter,
-                child: ElevatedButton(
-                    style: ButtonStyle(
-                        foregroundColor: MaterialStateProperty.all<Color>(AppColors.buttonNext),
+            body: _widgetOptions.elementAt(_currentIndex),
+            bottomNavigationBar: SalomonBottomBar(
+                currentIndex: _currentIndex,
+                selectedItemColor: Colors.blue,
+                onTap: (i) {setState(() {_currentIndex = i;});},
+                items: [
+                    SalomonBottomBarItem(
+                        icon: const Icon(Icons.home),
+                        title: const Text("Home"),
+                        selectedColor: Colors.purple,
                     ),
-                    child:  WidgetRipplesAnimation(width:200,height:50,borderRadiusSize: 20,child: Text('Click aquí para ingresar', style: TextStyle(fontSize: 15.0,color: Colors.white),) ,colorInit: AppColors.appBlueInit , key: Key("_buttonNext"), colorFinish: AppColors.appBlueFinish,),
-                    onPressed: (){
-                        Navigator.pushNamed(context, HomePage.routeName);
-                    },
-                )
+                    SalomonBottomBarItem(
+                        icon: const Icon(Icons.search),
+                        title: const Text("Buscar"),
+                        selectedColor: Colors.pink,
+                    ),
+                    SalomonBottomBarItem(
+                        icon: const Icon(Icons.fiber_new ),
+                        title: const Text("Nuevo Cliente"),
+                        selectedColor: Colors.orange,
+                    ),
+                    SalomonBottomBarItem(
+                        icon: const Icon(Icons.history),
+                        title: const Text("Historial de servicios"),
+                        selectedColor: Colors.teal,
+                    ),
+                ],
             ),
         );
     }
+
+    final List<Widget> _widgetOptions = <Widget>[
+        const HomePage(),
+        const SearchPage(),
+        const LoadPage(),
+        const HistoryServicesPage(),
+    ];
+
+
+
+
 }
+
