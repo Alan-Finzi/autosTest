@@ -102,7 +102,7 @@ class _SearchPageState extends State<SearchPage> {
             ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Buscando Cliente o auto')),);
             setState(() {
                 showClient= true;
-                _height = MediaQuery.of(context).size.height * 0.4;
+                _height = MediaQuery.of(context).size.height * 0.6;
             });
         }
     }
