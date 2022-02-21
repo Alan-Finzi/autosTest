@@ -7,7 +7,7 @@ import 'package:auto_test_app/widget/widgets.dart';
 import 'package:flutter/material.dart';
 
 class LoadCarPage extends StatefulWidget {
-    static const String routeName = 'load_page';
+    static const String routeName = 'load_car_page';
 
     const LoadCarPage({Key? key}) : super(key: key);
   @override
@@ -16,7 +16,7 @@ class LoadCarPage extends StatefulWidget {
 
 class _LoadCarPageState extends State<LoadCarPage> {
 
-    final nameKey = new GlobalKey();
+    final nameKey =  GlobalKey();
     final TextEditingController controllerMarca = TextEditingController();
     final TextEditingController controllerModelo = TextEditingController();
     final TextEditingController controllerYear = TextEditingController();

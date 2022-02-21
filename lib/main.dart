@@ -1,5 +1,4 @@
 import 'package:auto_test_app/pages/start_page.dart';
-import 'package:auto_test_app/providers/provider_bloc.dart';
 import 'package:auto_test_app/routes/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -22,15 +21,13 @@ class CardServiceApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(statusBarColor: Colors.black,));
-    return  ProviderBloc(key: const Key('MaterialApp'),
-    child:  MaterialApp(
+    return  MaterialApp(
       theme: _themeData(),
       initialRoute: initialRoute,
       color: Colors.black,
 
       debugShowCheckedModeBanner: false,
       routes: ApplicationRoutes.getApplicationRoutes(),
-    ),
     );
   }
   ThemeData _themeData() {

@@ -7,7 +7,7 @@ class ConstantString {
     static const headerTitle = "-Seleccione una de las opciones que le aparece abajo para realizar alguna acción.";
     static const option1 = "-Buscar Cliente por DNI o Patente.";
     static const option2 = "-Cargar Cliente Nuevo.";
-    static const option3 = "-Servicios y precios.";
+    static const option3 = "-Historial de servicio.";
     static const titleSea = "Datos de la cuenta";
     static const titleNewPerson = "Ingrese datos del cliente";
     static const buttonSear = "Buscar";

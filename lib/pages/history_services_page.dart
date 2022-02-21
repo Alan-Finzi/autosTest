@@ -169,7 +169,7 @@ class _HistoryServicesPageState extends State<HistoryServicesPage> {
 
 
     searchDniOrPatente( List<Service> listUsers, String values){
-        if(values == null||values == '' ){
+        if(values == '' ){
             var itemUser = listUsers;
             return itemUser;
         }

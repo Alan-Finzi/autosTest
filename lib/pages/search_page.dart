@@ -132,7 +132,7 @@ class _SearchPageState extends State<SearchPage> {
                             return SingleChildScrollView(
                                 child: Column(
                                     children: [
-                                        Container(child: Column(children: _createCard(respCl))),
+                                        Column(children: _createCard(respCl)),
                                         Row(
                                             children: [
                                                 Padding(
@@ -200,7 +200,7 @@ class _SearchPageState extends State<SearchPage> {
 
 
     searchDniOrPatente( List<user.User> listUsers, String values){
-        if(values == null||values == '' ){
+        if(values == '' ){
             var itemUser = listUsers;
             return itemUser;
         }

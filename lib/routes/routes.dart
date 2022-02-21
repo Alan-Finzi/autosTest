@@ -4,7 +4,6 @@ import 'package:auto_test_app/pages/history_services_page.dart';
 import 'package:auto_test_app/pages/home_page.dart';
 import 'package:auto_test_app/pages/load_car_page.dart';
 import 'package:auto_test_app/pages/load_page.dart';
-import 'package:auto_test_app/pages/prices_page.dart';
 import 'package:auto_test_app/pages/search_page.dart';
 import 'package:auto_test_app/pages/services_page.dart';
 import 'package:auto_test_app/pages/start_page.dart';
@@ -18,11 +17,10 @@ class ApplicationRoutes {
             StartPage.routeName               : (BuildContext context) => const StartPage(),
             HomePage.routeName                : (BuildContext context) => const HomePage(),
             SearchPage.routeName              : (BuildContext context) => const SearchPage(),
-            PricesPage.routeName              : (BuildContext context) => const PricesPage(),
             LoadPage.routeName                : (BuildContext context) => const LoadPage(),
             DetailCarPage.routeName           : (BuildContext context) =>  const DetailCarPage(),
             ServicesPage.routeName            : (BuildContext context) =>  const ServicesPage(),
-            LoadCarPage.routeName             : (BuildContext context) =>   LoadCarPage(),
+            LoadCarPage.routeName             : (BuildContext context) =>   const LoadCarPage(),
             HistoryServicesPage.routeName     : (BuildContext context) =>   const HistoryServicesPage(),
             DetailServicePage.routeName       : (BuildContext context) =>   const DetailServicePage(),
         };
@@ -50,11 +48,10 @@ class AppRoutes{
         StartPage.routeName                  : const StartPage(),
         HomePage.routeName                   : const HomePage(),
         SearchPage.routeName                 : const SearchPage(),
-        PricesPage.routeName                 : const PricesPage(),
         LoadPage.routeName                   : const LoadPage(),
         DetailCarPage.routeName              : const DetailCarPage(),
         ServicesPage.routeName               : const ServicesPage(),
-        LoadCarPage.routeName                :  LoadCarPage(),
+        LoadCarPage.routeName                :  const LoadCarPage(),
         HistoryServicesPage.routeName        :  const HistoryServicesPage(),
         DetailServicePage.routeName          :  const DetailServicePage(),
     };
